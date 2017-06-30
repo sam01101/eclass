@@ -51,6 +51,6 @@ $JSON -> imail = $imail;
 $JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
 header("Content-type: application/json; charset=utf-8");
 echo $JSON;
-
+var_dump($JSON);
 
 ?>
