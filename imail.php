@@ -17,7 +17,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,
             "pageNo=1");
 
 $result = curl_exec($ch);
-var_dump($result);
+
 $result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
 //var_dump($result);
 //preg_match_all('/indextabimaillist">(.*)<\/a>/U', $result, $imail_list);
@@ -25,7 +25,7 @@ $result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multipl
 
 $regex = preg_match_all('/iMailsender(.*)\' >(.*)<\/span>(?:.*)CampusMailID=(.*)&(?:.*)\' >(.*)<\/a>(?:.*)">(.*)</U', $result, $data);
 
-//var_dump($data);
+var_dump($data);
 
 if(!$regex) {
 	$json = new JSON();
