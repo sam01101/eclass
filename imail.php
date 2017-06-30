@@ -26,13 +26,13 @@ $result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multipl
 
 $regex = preg_match_all('/iMailsender(.*)\' >(.*)<\/span>(?:.*)CampusMailID=(.*)&(?:.*)\' >(.*)<\/a>(?:.*)">(.*)</U', $result, $data);
 
-var_dump($data);
+
 
 if(!$regex) {
 	$json = new JSON();
 	$json->alert('err', 'Invalid Token!');
 }
-'''
+
 $JSON = (object)array();
 foreach($data[1] as $key => $status)
 {
@@ -43,6 +43,9 @@ foreach($data[1] as $key => $status)
     $imail[$key]['title'] = str_replace(" <img src='/images/2009a/iMail/icon_attachment.gif' border='0' align='absmiddle' alt='附件' >",'📎',html_entity_decode($data[4][$key]));
     $imail[$key]['date'] = $data[5][$key];
 }
+
+var_dump($imail);
+
 $JSON -> count = count($imail);
 $JSON -> imail = $imail;
 $JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
