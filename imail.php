@@ -31,7 +31,7 @@ if(!$regex) {
 	$json = new JSON();
 	$json->alert('err', 'Invalid Token!');
 }
-
+'''
 $JSON = (object)array();
 foreach($data[1] as $key => $status)
 {
