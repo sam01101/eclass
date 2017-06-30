@@ -48,9 +48,10 @@ var_dump($imail);
 
 $JSON -> count = count($imail);
 $JSON -> imail = $imail;
+var_dump($JSON);
 $JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
 header("Content-type: application/json; charset=utf-8");
 echo $JSON;
-var_dump($JSON);
+
 
 ?>
