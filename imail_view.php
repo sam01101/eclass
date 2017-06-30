@@ -19,7 +19,7 @@ $result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multipl
 //preg_match_all('/indextabimaillist">(.*)<\/a>/U', $result, $imail_list);
 //preg_match_all("/fe_eimail\('(.*)'\)/U", $result, $imail_id);
 
-$regex = preg_match('/tabletext\' >(.*) \((?:.*)tabletext\'>(.*)<\/span>(?:.*)10%\'><tr><td>(.*)\.\.\.(?:.*)10%\'><tr><td>(.*)<\/td>(?:.*)style1\'>(.*)<\/td>/U', $result, $data);
+$regex = preg_match('/tabletext\' >(.*) \((?:.*)tabletext\'>(.*)<\/span>(?:.*)10%\'><tr><td>(.*)\.\.\.(?:.*)10%\'><tr><td>(.*)<\/td>(?:.*)style1\'>(.*)<\/td>/Us', $result, $data);
 
 //var_dump($data);
 

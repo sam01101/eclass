@@ -13,12 +13,14 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_COOKIE, "PHPSESSID=".$_GET['token']);
 curl_setopt($ch,CURLOPT_USERAGENT,'CHKL');
 $result = curl_exec($ch);
-$result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
+//$result = preg_replace('/(\>)\s*(\<)/m', '$1$2', $result);
+//$result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
+//$result = str_replace("\n", '', $result);
 //var_dump($result);
 //preg_match_all('/indextabclasslist">(.*)<\/a>/U', $result, $class_list);
 //preg_match_all("/fe_eclass\('(.*)'\)/U", $result, $class_id);
 
-$regex = preg_match_all('/fe_eclass\(\'(.*)\'\)(?:.*)indextabclasslist">(.*)<\/a>(?:.*)Contents\'>(.*)<(?:.*)Assessment\'>(.*)<(?:.*)Bulletin\'>(.*)<(?:.*)Announcement\'>(.*)</U', $result, $data);
+$regex = preg_match_all('/fe_eclass\(\'(.*)\'\)(?:.*)indextabclasslist">(.*)<\/a>(?:.*)Contents\'>(.*) \n<(?:.*)Assessment\'>(.*) \n<(?:.*)Bulletin\'>(.*) \n<(?:.*)Announcement\'>(.*) \n</Us', $result, $data);
 
 if(!$regex) {
 	$json = new JSON();
