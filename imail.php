@@ -48,10 +48,10 @@ foreach($data[1] as $key => $status)
 
 $JSON -> count = count($imail);
 $JSON -> imail = $imail;
-var_dump($JSON);
-$JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
+//var_dump($JSON);
+//$JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
 header("Content-type: application/json; charset=utf-8");
-echo $JSON;
+echo json_encode($JSON);
 
 
 ?>
