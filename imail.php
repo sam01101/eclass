@@ -26,7 +26,7 @@ $result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multipl
 
 $regex = preg_match_all('/iMailsender(.*)\' >(.*)<\/span>(?:.*)CampusMailID=(.*)&(?:.*)\' >(.*)<\/a>(?:.*)">(.*)</U', $result, $data);
 
-
+var_dump($result);
 
 if(!$regex) {
 	$json = new JSON();
