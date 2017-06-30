@@ -44,7 +44,7 @@ foreach($data[1] as $key => $status)
     $imail[$key]['date'] = $data[5][$key];
 }
 
-var_dump($imail);
+//var_dump($imail);
 
 $JSON -> count = count($imail);
 $JSON -> imail = $imail;
