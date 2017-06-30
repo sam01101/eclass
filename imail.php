@@ -39,7 +39,7 @@ foreach($data[1] as $key => $status)
 	$status = empty($status) ? 'read' : 'unread';
 	$imail[$key]['id'] = $data[3][$key];
 	$imail[$key]['status'] = $status;
-    $imail[$key]['name'] = strip_tags($data[2][$key]);
+    $imail[$key]['name'] = $data[2][$key];
     $imail[$key]['title'] = str_replace(" <img src='/images/2009a/iMail/icon_attachment.gif' border='0' align='absmiddle' alt='附件' >",'📎',html_entity_decode($data[4][$key]));
     $imail[$key]['date'] = $data[5][$key];
 }
