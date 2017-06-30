@@ -19,13 +19,11 @@ curl_setopt($ch, CURLOPT_POSTFIELDS,
 
 $result = curl_exec($ch);
 
-var_dump($result);
-
-$result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
+//$result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
 //var_dump($result);
 //preg_match_all('/indextabimaillist">(.*)<\/a>/U', $result, $imail_list);
 //preg_match_all("/fe_eimail\('(.*)'\)/U", $result, $imail_id);
-
+$result = preg_replace('/(\>)\s*(\<)/m', '$1$2', $result);
 $regex = preg_match_all('/iMailsender(.*)\' >(.*)<\/span>(?:.*)CampusMailID=(.*)&(?:.*)\' >(.*)<\/a>(?:.*)">(.*)</U', $result, $data);
 
 
