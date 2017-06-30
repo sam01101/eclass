@@ -47,7 +47,7 @@ foreach($data[1] as $key => $status)
 //var_dump($imail);
 
 $JSON -> count = count($imail);
-//$JSON -> imail = $imail;
+$JSON -> imail = $imail;
 $JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
 header("Content-type: application/json; charset=utf-8");
 echo $JSON;
