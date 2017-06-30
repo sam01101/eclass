@@ -14,9 +14,10 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_COOKIE, "PHPSESSID=".$_GET['token']);
 curl_setopt($ch,CURLOPT_USERAGENT,'CHKL');
 curl_setopt($ch, CURLOPT_POSTFIELDS,
-            "pageNo=2");
+            "pageNo=1");
 
 $result = curl_exec($ch);
+var_dump($result);
 $result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
 //var_dump($result);
 //preg_match_all('/indextabimaillist">(.*)<\/a>/U', $result, $imail_list);
