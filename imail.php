@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 include('functions.php');
 
-getCheck('token');
+getCheck('token','page');
 
 $ch = curl_init('http://eclass.chonghwakl.edu.my/home/imail/viewfolder.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -15,7 +15,7 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_COOKIE, "PHPSESSID=".$_GET['token']);
 curl_setopt($ch,CURLOPT_USERAGENT,'CHKL');
 curl_setopt($ch, CURLOPT_POSTFIELDS,
-            "pageNo=1");
+            "pageNo=".$_GET['page']);
 
 $result = curl_exec($ch);
 
