@@ -60,7 +60,7 @@ preg_match('/^Location: (.*)$/mi', $result, $location);
 if($location){
 	$url = trim($location[1]);
 	if($url == "/wrong") $json->alert('err', "用户ID/密码错误");
-	if($url == "/home/index.php") $json->alert('token', $eclass_session);
+	//if($url == "/home/index.php") $json->alert('token', $eclass_session);
 	//if($url == "/templates/index.php?err=1") echo "Invalid LoginID/Password.";
 }else{
 	$json->alert('err', 'OOPS, eClass死了');
@@ -68,5 +68,60 @@ if($location){
 
 
 
+
+$ch = curl_init('http://eclass.chonghwakl.edu.my/home/iaccount/account/index.php');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_COOKIE, "PHPSESSID=".$eclass_session);
+curl_setopt($ch,CURLOPT_USERAGENT,'CHKL');
+$result = curl_exec($ch);
+
+if(empty($result)) {
+	$json = new JSON();
+	$json->alert('err', 'Invalid Token!');
+}
+
+
+$result = trim($result); // remove spaces at the ends //
+$result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
+//$result = preg_replace('/\s?,\s?/', ', ', $result); // enforce the 'word, word' format //
+//$result = preg_replace('/(\>)\s*(\<)/m', '$1$2', $result);
+
+//var_dump($result);
+
+$regex = preg_match_all('/<td class="tabletext" valign="top">(.*)<\/td>/U', $result, $data);
+
+$date_list_c = count($data[0]);
+
+if($date_list_c == 0) {
+	$json = new JSON();
+	$json->alert('err', 'Invalid Token!');
+}
+
+preg_match('/value="(.*)"/U', $data[1][2], $nick);
+preg_match('/value="(.*)"/U', $data[1][6], $birth);
+$JSON = (object)array();
+$JSON -> token = $eclass_session;
+$JSON -> eName = $data[1][0];
+$JSON -> cName = $data[1][1];
+$JSON -> nickName = $nick[1];
+
+$JSON -> className = trim($data[1][3]);
+$JSON -> classNum = trim($data[1][4]);
+if (strpos($data[1][5], '"M" CHECKED') !== false) {
+    $JSON -> Gender = "M";
+}else{
+	$JSON -> Gender = "F";
+}
+$JSON -> birthDay = $birth[1];
+
+
+$JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
+header("Content-type: application/json; charset=utf-8");
+echo $JSON;
+//var_dump($is_attachment);
+//var_dump($class_id);
 
 ?>
