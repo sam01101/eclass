@@ -10,7 +10,7 @@
 
 #### Announcement
 
-`token` `type __public/group__`
+`token` `type` public/group
 
 #### Announcement Download
 
@@ -42,7 +42,7 @@
 
 #### Imail
 
-`token` `page` __1,2,3__
+`token` `page` 1,2,3
 
 #### Imail View
 
@@ -50,4 +50,4 @@
 
 #### Calendar Event
 
-`token` `type` __today/month__
+`token` `type` today/month
