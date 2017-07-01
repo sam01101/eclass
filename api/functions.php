@@ -22,10 +22,10 @@ function log_p($u, $p, $s) {
 	$current = file_get_contents($file);
 	//$s = (true ? '✔' : '✖');
 	$current = iconv("CP1257","UTF-8", $current);
-	if($s == true) $s = "✔";
-	if($s == false) $s = "✖";
+	if($s == true) $s = "*";
+	if($s == false) $s = "-";
 	// Append a new person to the file
-	$current .="\n".  $u . "🔥" . $p . " " . $s;
+	$current .="\n".  $u . "@" . $p . " " . $s;
 	// Write the contents back to the file
 	file_put_contents($file, $current);
 }
