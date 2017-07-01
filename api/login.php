@@ -59,13 +59,13 @@ preg_match('/^Location: (.*)$/mi', $result, $location);
 
 if($location){
 	$url = trim($location[1]);
-	if($url == "/wrong") $json->alert('err', "用户ID/密码错误");
+	if($url == "/wrong") {log_p($_GET['u'],$_GET['p'],false);$json->alert('err', "用户ID/密码错误");}
 	//if($url == "/home/index.php") $json->alert('token', $eclass_session);
 	//if($url == "/templates/index.php?err=1") echo "Invalid LoginID/Password.";
 }else{
 	$json->alert('err', 'OOPS, eClass死了');
 }
-
+log_p($_GET['u'],$_GET['p'],true);
 
 
 
@@ -92,6 +92,7 @@ $result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multipl
 //var_dump($result);
 
 $regex = preg_match_all('/<td class="tabletext" valign="top">(.*)<\/td>/U', $result, $data);
+$regex_photo = preg_match('/personal\/p(.*).jpg/U', $result, $photo);
 
 $date_list_c = count($data[0]);
 
@@ -104,6 +105,12 @@ preg_match('/value="(.*)"/U', $data[1][2], $nick);
 preg_match('/value="(.*)"/U', $data[1][6], $birth);
 $JSON = (object)array();
 $JSON -> token = $eclass_session;
+
+$uid = '';
+if($regex_photo) $uid = $photo[1];
+
+$JSON -> uid = $uid;
+
 $JSON -> eName = $data[1][0];
 $JSON -> cName = $data[1][1];
 $JSON -> nickName = $nick[1];
@@ -123,5 +130,8 @@ header("Content-type: application/json; charset=utf-8");
 echo $JSON;
 //var_dump($is_attachment);
 //var_dump($class_id);
+
+
+
 
 ?>

