@@ -1,48 +1,40 @@
 # chkl_eclass
 ### API
 #### Login
-@u __username__
-@p __password__
-
+`u` `p`
+---
 #### Logout
-@token __token__
-
+`token`
+---
 #### Announcement
-@type `public/group`
-@token __token__
-
+`token` `type` __public/group__
+---
 #### Announcement Download
-@type `public/group`
-@token __token__
-
+`token` `file`
+---
 #### Announcement View
-@token __token__
-@mid __announcementId__
-
+`token` `mid`
+---
 #### Class Login
-@token __token__
-@cid __courseId__
-
+`token` `cid`
+---
 #### Class List
-@token __token__
-
+`token`
+---
 #### Class Announcement
-@token __token__
-
+`token`
+---
 #### Class Assignment
-@token __token__
-
+`token`
+---
 #### Class Recent Note
-@token __token__
-
+`token`
+---
 #### Imail
-@token __token__
-@page `1,2,3`
-
+`token` `page` __1,2,3__
+---
 #### Imail View
-@token __token__
-@mid __campusMailId__
-
+`token` `mid`
+---
 #### Calendar Event
-@token __token__
-@type `today/month`
+`token` `type` __today/month__
