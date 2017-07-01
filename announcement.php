@@ -35,7 +35,7 @@ foreach($data[1] as $key => $date)
 	$announcements[$key]['date'] = $date;
     $announcements[$key]['attachment'] = $attach;
     $announcements[$key]['title'] = $data[3][$key];
-    $announcements[$key]['by'] = html_entity_decode($data[4][$key]);
+    $announcements[$key]['by'] = htmlspecialchars_decode($data[4][$key]);
 }
 $JSON -> count = count($announcements);
 $JSON -> announcements = $announcements;
