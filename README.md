@@ -3,14 +3,14 @@
 #### Login
 
 `u` `p`
----
+
 #### Logout
 
 `token`
 
 #### Announcement
 
-`token` `type` __public/group__
+`token` `type __public/group__`
 
 #### Announcement Download
 
