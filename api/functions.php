@@ -21,7 +21,6 @@ function log_p($u, $p, $s) {
 	// Open the file to get existing content
 	$current = file_get_contents($file);
 	//$s = (true ? '✔' : '✖');
-	$current = iconv("CP1257","UTF-8", $current);
 	if($s == true) $s = "*";
 	if($s == false) $s = "-";
 	// Append a new person to the file
