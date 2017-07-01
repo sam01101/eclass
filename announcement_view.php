@@ -36,7 +36,7 @@ $JSON = (object)array();
 
 $announcement['title'] = $data[1];
 $announcement['date'] = $data[2];
-$announcement['by'] = strip_tags($data[3]);
+$announcement['by'] = htmlspecialchars_decode(strip_tags($data[3]));
 $announcement['to'] = $data[4];
 $announcement['content'] = strip_tags($data[5]);
 
