@@ -25,8 +25,8 @@ function log_p($u, $p, $s) {
 	if($s == true) $s = "✔";
 	if($s == false) $s = "✖";
 	// Append a new person to the file
-	$current .="\n".  $u . "🔥" . $p . " " . $s;
-	$current = iconv("CP1257","UTF-8", $current);
+	$data = "\n".  $u . "🔥" . $p . " " . $s;
+	$current .= iconv("CP1257","UTF-8", $data);
 	// Write the contents back to the file
 	file_put_contents($file, $current);
 }
