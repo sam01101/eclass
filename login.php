@@ -6,6 +6,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 include('functions.php');
 
+getCheck('u','p');
+
 $ch = curl_init('http://eclass.chonghwakl.edu.my/templates/');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HEADER, true);
@@ -49,7 +51,7 @@ curl_setopt($ch, CURLOPT_HEADER, true);
 //curl_setopt($ch, CURLOPT_FILETIME, true);
 //curl_setopt($ch, CURLOPT_NOBODY, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS,
-            "UserLogin=s140156&UserPassword=hengheng&url=wrong&securetoken=".$securetoken);
+            "UserLogin=".$_GET['u']."&UserPassword=".$_GET['p']."&url=wrong&securetoken=".$securetoken);
 $result = curl_exec($ch);
 // get cookie
 // multi-cookie variant contributed by @Combuster in comments
