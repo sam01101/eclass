@@ -13,7 +13,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_COOKIE, "PHPSESSID=".$_GET['token']);
 curl_setopt($ch,CURLOPT_USERAGENT,'CHKL');
 $result = curl_exec($ch);
-$result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
+$result = str_replace(["\n", "\r", "\t"], '', $result);
+//$result = preg_replace('/\s+/', ' ', $result); // make sure there aren't multiple spaces //
 //var_dump($result);
 //preg_match_all('/indextabclasslist">(.*)<\/a>/U', $result, $class_list);
 //preg_match_all("/fe_eclass\('(.*)'\)/U", $result, $class_id);
