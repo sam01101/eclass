@@ -36,7 +36,7 @@ foreach($data[1] as $key => $date)
     $announcements[$key]['attachment'] = $attach;
     $announcements[$key]['id'] = $data[3][$key];
     $announcements[$key]['title'] = $data[4][$key];
-    $announcements[$key]['by'] = htmlspecialchars_decode($data[5][$key]);
+    $announcements[$key]['by'] = str_replace('<br>', '@', htmlspecialchars_decode($data[5][$key]));
 }
 $JSON -> count = count($announcements);
 $JSON -> announcements = $announcements;
