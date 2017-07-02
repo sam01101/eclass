@@ -38,7 +38,7 @@ foreach($data[1] as $key => $id)
     $class[$key]['a'] = $data[6][$key];
 }
 $JSON -> count = count($class);
-$JSON -> class = $class;
+$JSON -> classroom = $class;
 $JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
 header("Content-type: application/json; charset=utf-8");
 echo $JSON;
