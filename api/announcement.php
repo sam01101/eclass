@@ -34,8 +34,9 @@ foreach($data[1] as $key => $date)
 	if($data[2][$key] == "&nbsp;") $attach = true;
 	$announcements[$key]['date'] = $date;
     $announcements[$key]['attachment'] = $attach;
-    $announcements[$key]['title'] = $data[3][$key];
-    $announcements[$key]['by'] = htmlspecialchars_decode($data[4][$key]);
+    $announcements[$key]['id'] = $data[3][$key];
+    $announcements[$key]['title'] = $data[4][$key];
+    $announcements[$key]['by'] = htmlspecialchars_decode($data[5][$key]);
 }
 $JSON -> count = count($announcements);
 $JSON -> announcements = $announcements;
