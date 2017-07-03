@@ -1,7 +1,9 @@
 <?php
+include('functions.php');
+getCheck('id');
 header("Content-Type: image/jpeg");
 
-$url = 'http://eclass.chonghwakl.edu.my/file/photo/personal/p235.JPG';
+$url = 'http://eclass.chonghwakl.edu.my/file/photo/personal/p' . $_GET['id'] . '.JPG';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 //curl_setopt($ch, CURLOPT_HEADER, false);
