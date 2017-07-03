@@ -3,7 +3,7 @@ include('functions.php');
 getCheck('id');
 header("Content-Type: image/jpeg");
 
-$url = 'http://eclass.chonghwakl.edu.my/file/photo/personal/p' . $_GET['id'] . '.JPG';
+$url = 'http://eclass.chonghwakl.edu.my/file/photo/personal/p' . $_GET['id'] . '.jpg';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 //curl_setopt($ch, CURLOPT_HEADER, false);
