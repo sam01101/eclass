@@ -20,9 +20,9 @@ $result = curl_exec($ch);
 //preg_match_all('/indextabclasslist">(.*)<\/a>/U', $result, $class_list);
 //preg_match_all("/fe_eclass\('(.*)'\)/U", $result, $class_id);
 
-$regex = preg_match_all('/fe_eclass\(\'(.*)\'\)(?:.*)indextabclasslist">(.*)<\/a>(?:.*)Contents\'>(.*) \n<(?:.*)Assessment\'>(.*) \n<(?:.*)Bulletin\'>(.*) \n<(?:.*)Announcement\'>(.*) \n</Us', $result, $data);
+$regex = preg_match_all('/fe_eclass\(\'(.*)\'\)(?:.*)indextabclasslist">(.*)<\/a>(?:.*)icon_econtent.gif(?:.*)>(.*) \n<(?:.*)icon_assessment.gif(?:.*)>(.*) \n<(?:.*)icon_forum_off.gif(?:.*)>(.*) \n<(?:.*)icon_annou_off.gif(?:.*)>(.*) \n</Us', $result, $data);
 
-var_dump($data);
+//var_dump($data);
 
 if(!$regex) {
 	$json = new JSON();
