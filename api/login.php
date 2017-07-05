@@ -114,16 +114,18 @@ $JSON -> uid = $uid;
 $JSON -> eName = $data[1][0];
 $JSON -> cName = $data[1][1];
 $JSON -> nickName = $nick[1];
-
-$JSON -> className = trim($data[1][3]);
-$JSON -> classNum = trim($data[1][4]);
+if(trim($data[1][4]) != ''){
+	$JSON -> className = trim($data[1][3]);
+	$JSON -> classNum = trim($data[1][4]);
+}
+/*
 if (strpos($data[1][5], '"M" CHECKED') !== false) {
     $JSON -> Gender = "M";
 }else{
 	$JSON -> Gender = "F";
 }
 $JSON -> birthDay = $birth[1];
-
+*/
 
 $JSON = json_encode($JSON, JSON_UNESCAPED_UNICODE);
 header("Content-type: application/json; charset=utf-8");
