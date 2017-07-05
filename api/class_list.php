@@ -34,7 +34,7 @@ $JSON = (object)array();
 foreach($data[1] as $key => $id)
 {
 	$class[$key]['id'] = $id;
-    $class[$key]['name'] = htmlspecialchars_decode($data[2][$key]);
+    $class[$key]['name'] = htmlspecialchars_decode($data[2][$key], ENT_QUOTES);
     //$class[$key]['c'] = $data[3][$key];
     //$class[$key]['w'] = $data[4][$key];
     //$class[$key]['b'] = $data[5][$key];
