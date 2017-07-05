@@ -26,7 +26,6 @@ $result = curl_exec($ch);
 
 
 $regex = preg_match_all('/\'tabletext\'>(.*) (?:.*)tabletext\'>(.*)<a(?:.*)fe_view_announcement\((.*)\)(?:.*)indexnewslist \'>(.*) <\/a>(?:.*)tabletext\'>(.*)<\/td>/U', $result, $data);
-var_dump($data);
 
 if(!$regex) {
 	$json = new JSON();
@@ -39,7 +38,7 @@ foreach($data[1] as $key => $date)
 	$annyear = substr($date, 0, 4);
 	if($annyear != $year) break;
 	$attach = false;
-	if($data[2][$key] == "&nbsp;") $attach = true;
+	if($data[2][$key] != "&nbsp;") $attach = true;
 	$announcements[$key]['date'] = $date;
     $announcements[$key]['attachment'] = $attach;
     $announcements[$key]['id'] = $data[3][$key];
