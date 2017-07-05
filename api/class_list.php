@@ -22,6 +22,8 @@ $result = curl_exec($ch);
 
 $regex = preg_match_all('/fe_eclass\(\'(.*)\'\)(?:.*)indextabclasslist">(.*)<\/a>(?:.*)Contents\'>(.*) \n<(?:.*)Assessment\'>(.*) \n<(?:.*)Bulletin\'>(.*) \n<(?:.*)Announcement\'>(.*) \n</Us', $result, $data);
 
+var_dump($data);
+
 if(!$regex) {
 	$json = new JSON();
 	$json->alert('err', 'Invalid Token!');
