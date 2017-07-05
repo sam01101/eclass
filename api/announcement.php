@@ -10,6 +10,12 @@ if($_GET['type'] == "public") $type = 0;
 else if($_GET['type'] == "group") $type = 1;
 else exit();
 
+if(isset($_GET['year']) && is_int($_GET['year'])){
+	$year = $_GET['year'];
+}else{
+	$year = date("Y");
+}
+
 $ch = curl_init('http://eclass.chonghwakl.edu.my/home/moreannouncement.php?type='. $type);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -30,6 +36,8 @@ if(!$regex) {
 $JSON = (object)array();
 foreach($data[1] as $key => $date)
 {
+	$year = substr($data, 0, 4);
+	if($year != $year) break;
 	$attach = false;
 	if($data[2][$key] == "&nbsp;") $attach = true;
 	$announcements[$key]['date'] = $date;
