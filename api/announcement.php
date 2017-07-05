@@ -36,8 +36,8 @@ if(!$regex) {
 $JSON = (object)array();
 foreach($data[1] as $key => $date)
 {
-	$year = substr($data, 0, 4);
-	if($year != $year) break;
+	$annyear = substr($date, 0, 4);
+	if($annyear != $year) break;
 	$attach = false;
 	if($data[2][$key] == "&nbsp;") $attach = true;
 	$announcements[$key]['date'] = $date;
