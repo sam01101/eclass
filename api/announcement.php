@@ -26,7 +26,7 @@ $result = curl_exec($ch);
 
 
 $regex = preg_match_all('/\'tabletext\'>(.*) (?:.*)tabletext\'>(.*)<a(?:.*)fe_view_announcement\((.*)\)(?:.*)indexnewslist \'>(.*) <\/a>(?:.*)tabletext\'>(.*)<\/td>/U', $result, $data);
-
+var_dump($data);
 
 if(!$regex) {
 	$json = new JSON();
