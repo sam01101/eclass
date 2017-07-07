@@ -36,11 +36,20 @@ if(!$regex) {
 $JSON = (object)array();
 foreach($data[1] as $key => $status)
 {
+	$title = html_entity_decode($data[4][$key]);
+	$title_preg = preg_replace("/ <img src='\/images\/2009a\/iMail\/icon_attachment.gif'(.*)' >/",'',$title);
+
 	$status = empty($status) ? 'read' : 'unread';
 	$imail[$key]['id'] = $data[3][$key];
 	$imail[$key]['status'] = $status;
+
+	if($title != $title_preg) 
+		$imail[$key]['attach'] = true;
+	else
+		$imail[$key]['attach'] = false;
+
     $imail[$key]['name'] = $data[2][$key];
-    $imail[$key]['title'] = str_replace(" <img src='/images/2009a/iMail/icon_attachment.gif' border='0' align='absmiddle' alt='附件' >",'📎',html_entity_decode($data[4][$key]));
+    $imail[$key]['title'] = $title_preg;
     $imail[$key]['date'] = $data[5][$key];
 }
 
