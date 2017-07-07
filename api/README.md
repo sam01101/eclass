@@ -1,4 +1,9 @@
 # chkl_eclass
+### BUG fix
+> Viewpager Auto focus (Listview, RecycleView, Webview) Problems
+https://stackoverflow.com/questions/36923948/recycleview-steals-focus-when-inside-a-nestedscrollview
+> ListView Auto height 100% with custom adapter
+https://stackoverflow.com/questions/17693578/android-how-to-display-2-listviews-in-one-activity-one-after-the-other
 ### API
 #### Login
 
