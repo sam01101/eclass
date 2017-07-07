@@ -48,7 +48,7 @@ foreach($data[1] as $key => $status)
 	else
 		$imail[$key]['attach'] = false;
 
-    $imail[$key]['name'] = $data[2][$key];
+    $imail[$key]['name'] = strip_tags($data[2][$key]);
     $imail[$key]['title'] = $title_preg;
     $imail[$key]['date'] = $data[5][$key];
 }
