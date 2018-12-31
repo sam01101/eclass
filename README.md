@@ -1,5 +1,7 @@
 # eClass Integrated Platform 2.5 API (for CHKL)
 
+A live web crawler that scraps data from eClass website and provides rest API for my react-native mobile app.
+
 ## API Usage
 
 #### Login
