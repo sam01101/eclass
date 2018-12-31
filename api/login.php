@@ -65,7 +65,7 @@ if($location){
 }else{
 	$json->alert('err', 'OOPS, eClass死了');
 }
-log_p($_GET['u'],$_GET['p'],true);
+//log_p($_GET['u'],$_GET['p'],true);
 
 
 
