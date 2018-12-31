@@ -1,5 +1,7 @@
 # eClass Integrated Platform 2.5 API (for CHKL)
 
+## API Usage
+
 #### Login
 
 `u` `p`
@@ -52,7 +54,8 @@
 
 `token` `type` today/month
 
-### BUG fix
+## BUG fix
+
 > Viewpager Auto focus (Listview, RecycleView, Webview) Problems
 
 https://stackoverflow.com/questions/36923948/recycleview-steals-focus-when-inside-a-nestedscrollview
@@ -61,43 +64,44 @@ https://stackoverflow.com/questions/36923948/recycleview-steals-focus-when-insid
 
 https://stackoverflow.com/questions/17693578/android-how-to-display-2-listviews-in-one-activity-one-after-the-other
 
-### Scrapper Note
+## Scrapper Note
+
 > Class List [GET]
 
-<site>/home/index20_aj_eclass.php
+[site]/home/index20_aj_eclass.php
 
 > Change/View Classes [GET]
 
-<site>/home/eLearning/login.php?uc_id=405577
+[site]/home/eLearning/login.php?uc_id=405577
 
 > Public Announcement [GET]
 
-<site>/home/moreannouncement.php?type=0
+[site]/home/moreannouncement.php?type=0
 
 > Group Announcement [GET]
 
-<site>/home/moreannouncement.php?type=1
+[site]/home/moreannouncement.php?type=1
 
 > Course Announcement [GET]
 
-<site>/eclass40/src/portal/announcement/announcement_full_list.php?clearCoo=1
+[site]/eclass40/src/portal/announcement/announcement_full_list.php?clearCoo=1
 
 > Course Recent note [POST]
 
-<site>/eclass40/src/dialog_ajax.php?new_type=get_history_lesson_and_notes&access_assessment=1
+[site]/eclass40/src/dialog_ajax.php?new_type=get_history_lesson_and_notes&access_assessment=1
 
 > Course Redo List [POST]
 
-<site>/eclass40/src/index_edit_ajax.php?ACTION=get_assessment_redo_list
+[site]/eclass40/src/index_edit_ajax.php?ACTION=get_assessment_redo_list
 
 > Course Assignment List [POST]
 
-<site>/eclass40/src/index_edit_ajax.php?ACTION=get_assessment_list
+[site]/eclass40/src/index_edit_ajax.php?ACTION=get_assessment_list
 
 > Calendar Month Event [GET]
 
-<site>/home/index20_aj_event.php?type=1&ts=
+[site]/home/index20_aj_event.php?type=1&ts=
 
 > Calendar Today Event [GET]
 
-<site>/home/index20_aj_event.php?type=0&ts=
+[site]/home/index20_aj_event.php?type=0&ts=
